@@ -5,7 +5,6 @@ const asyncWrapper = require('../middleware/async')
 
 const getTask =  async (req, res) => {
     try {
-        console.log(req.params);
         const {id: taskID} = req.params;
         const task = await Task.findOne({_id: taskID});
         if (!task) {
